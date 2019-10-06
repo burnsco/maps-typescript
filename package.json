@@ -1,0 +1,9 @@
+{
+  "name": "maps",
+  "version": "1.0.0",
+  "description": "maps app to learn ts",
+  "main": "./src/index.js",
+  "repository": "https://github.com/burnsco/maps-typescript.git",
+  "author": "Corey Burns",
+  "license": "MIT"
+}
