@@ -5,5 +5,9 @@
   "main": "./src/index.js",
   "repository": "https://github.com/burnsco/maps-typescript.git",
   "author": "Corey Burns",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@types/faker": "^4.1.6",
+    "faker": "^4.1.0"
+  }
 }
