@@ -117,17 +117,41 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/index.ts":[function(require,module,exports) {
-// import { User } from './User';
-// import { Company } from './Company';
-var map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 1,
-  center: {
-    lat: 0,
-    lng: 0
-  }
+})({"src/CustomMap.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-},{}],"../../../Users/corey/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+var CustomMap =
+/** @class */
+function () {
+  function CustomMap() {
+    this.googleMap = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 0,
+        lng: 0
+      },
+      zoom: 1
+    });
+  }
+
+  return CustomMap;
+}();
+
+exports.CustomMap = CustomMap;
+},{}],"src/index.ts":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var CustomMap_1 = require("./CustomMap");
+
+var customMap = new CustomMap_1.CustomMap();
+},{"./CustomMap":"src/CustomMap.ts"}],"../../../Users/corey/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -155,7 +179,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58641" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51843" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
